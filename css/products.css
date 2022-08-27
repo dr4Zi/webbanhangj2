@@ -1,0 +1,37 @@
+.row-2{
+	justify-content: space-between;
+	margin: 100px auto 50px;
+}
+select,input{
+	border: 1px solid #ff523b;
+	padding: 5px;
+}
+input,select:forcus{
+	outline: none;
+}
+input{
+	border: 1px solid #ff523b;
+	height: 29px;
+	width: 224px;
+}
+.page-btn{
+	margin: 0 auto 80px;
+}
+.page-btn span{
+	display: inline-block;
+	border: 1px solid #ff523b;
+	margin-left: 10px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+
+}
+.page-btn span:hover{
+	background: #ff523b;
+	color: #fff;
+}
+h4:hover{
+	color: #543434;
+}
