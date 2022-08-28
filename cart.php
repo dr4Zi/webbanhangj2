@@ -1,6 +1,8 @@
 <?php session_start();
 if(empty($_SESSION['id'])){
-	header('location:account.php?error= Hãy đăng nhập lại');
+	$_SESSION['error'] = 'Hãy đăng nhập lại';
+	header('location:account.php');
+	exit;
 }
 ?>
 <!DOCTYPE html>

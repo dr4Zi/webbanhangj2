@@ -30,17 +30,17 @@
 </div>
 
 <?php 
-if (isset($_GET['error'])) { 
+if (isset($_SESSION['error'])) {
 	?>
-	<span style="color: red; font-size: 20px;">
-		<?php echo $_GET['error']; ?>
+	<span style="color: red; font-size: 20px; margin: 14px 30px;">
+		<?php echo $_SESSION['error']; ?>
 	</span>
 <?php } ?>
 <?php 
-if (isset($_GET['success'])) { 
+if (isset($_SESSION['success'])) { 
 	?>
-	<span style="color: green; font-size: 20px;">
-		<?php echo $_GET['success']; ?>
+	<span style="color: green; font-size: 20px; margin: 14px 30px;">
+		<?php echo $_SESSION['success']; ?>
 	</span>
 <?php 
 	} 

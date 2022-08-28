@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php 
+session_start();
+require 'check-login.php';
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +12,21 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
+	<!-- -- JS thong bao dang nhap thanh cong -- -->
+	<script type="text/javascript">
+		<?php 
+		if (isset($_SESSION['success'])) { 
+			?>
+			swal("<?php echo $_SESSION['success'] ?>","Đăng nhập thành công","success");
+			<?php 
+			unset($_SESSION['success']);
+		} 
+		?>
+	</script> 
+
 	<div class="header">
 		<div class="container">
 			<div class="navbar">

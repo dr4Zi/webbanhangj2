@@ -1,4 +1,14 @@
-<?php session_start() ?>
+<?php 
+session_start();
+require 'check-login.php';
+ ?>
+ <?php 
+if (isset($_SESSION['id'])) {
+	$_SESSION['success'] = 'Chào mừng ' . $_SESSION['name'] . ' đã quay trở lại';
+	header('location:index.php');
+	exit;
+}
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +52,7 @@
 						<form id="loginform" method="post" action="process/login-process.php">
 							<input type="text" placeholder="Email" name="email">
 							<input type="password" placeholder="Mật khẩu" name="password">
+							<input type="checkbox" name="remember" id="remember"> Ghi nhớ đăng nhập
 							<button type="submit" class="btn">Đăng nhập</button>
 							<a href="">Quên mật khẩu</a>
 						</form>
@@ -99,16 +110,20 @@
 <!-- -- JS alert-- -->
 <script type="text/javascript">
 	<?php 
-if (isset($_GET['error'])) { 
+if (isset($_SESSION['error'])) { 
 	?>
-	swal("<?php echo $_GET['error'] ?>","","error");
-<?php } ?>
+	swal("<?php echo $_SESSION['error'] ?>","","error");
 <?php 
-if (isset($_GET['success'])) { 
+unset($_SESSION['error']);
+} 
+?>
+<?php 
+if (isset($_SESSION['success'])) { 
 	?>
-	swal("<?php echo $_GET['success'] ?>","","success");
+	swal("<?php echo $_SESSION['success'] ?>","","success");
 <?php 
-	} 
+unset($_SESSION['success']);
+} 
 ?>
 </script>
 

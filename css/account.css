@@ -55,6 +55,8 @@ form .btn:forcus{
 }
 #loginform{
 	left: 0px;
+	font-size: 14px;
+	color: #333;
 }
 form a{
 	font-size: 12px;
@@ -67,4 +69,12 @@ form a{
 	margin-top: 8px;
 	transform: translateX(100px);
 	transition: transform 1s;
+}
+#text{
+	font-size: 12px;
+}
+#remember{
+	width: 15%;
+	height: 16px;
+	margin: 10px -8px 0 -130px;
 }
