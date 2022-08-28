@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require 'check-login.php';
+require_once 'check-login.php';
  ?>
  <?php 
 if (isset($_SESSION['id'])) {

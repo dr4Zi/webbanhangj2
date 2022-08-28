@@ -29,7 +29,7 @@ if($number_rows == 1){
 		$token = uniqid('user_', true) . time();
 		$sql = "update customers set token = '$token' where id = '$id'";
 		mysqli_query($connect,$sql);
-		setcookie('remember',$token,time()+86400*30);
+		setcookie('remember',$token,time()+86400*30, "/" );
 	}
 
 	header('location:../index.php');
